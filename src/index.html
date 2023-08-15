@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../styles/output.css" rel="stylesheet" />
+    <script src="./navbar.js"></script>
+  </head>
+  <body>
+    <nav class="flex justify-between py-6 mx-12">
+      <img src="./assets/images/navbar/giarddesign.svg" alt="logo" />
+      <ul class="flex gap-12">
+        <li>
+          <div
+            class="group relative after:content-[''] after:inline-block after:w-3 after:h-3 after:bg-chevron-down cursor-pointer"
+          >
+            <button>Oferta</button>
+            <div class="hidden absolute group-hover:flex flex-col">
+              <a href="#">Projekty</a>
+              <a href="#">Wizualizacje</a>
+              <a href="#">Realizacje</a>
+            </div>
+          </div>
+        </li>
+        <li class="cursor-pointer">O firmie</li>
+        <li class="cursor-pointer">Realizacje</li>
+        <li class="cursor-pointer">Kontakt</li>
+        <li class="cursor-pointer">
+          <div class="flex items-center overflow-hidden">
+            <img
+              src="./assets/images/navbar/magnifier.svg"
+              class="transition-transform duration-400 ease-out cursor-pointer transform"
+              onclick="toggleSearch()"
+            />
+            <input
+              type="text"
+              class="flex-none transition-all duration-400 ease-out invisible w-0 border-none outline-none px-2"
+              id="searchInput"
+              placeholder="Search..."
+            />
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <section class="bg-primary-color flex justify-end items-center gap-16">
+      <div class="max-w-xl">
+        <div>
+          <h2 class="text-6xl">Nowoczesna aranżacja Twojego ogrodu</h2>
+          <p class="mt-11">
+            Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
+            realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
+            podejściem do każdego projektu.
+          </p>
+        </div>
+        <div class="mt-[5.5rem] flex justify-start gap-9">
+          <button
+            class="py-3 px-6 bg-secondary-color rounded-full text-white text-grey-color"
+          >
+            Skontaktuj się z nami
+          </button>
+          <button
+            class="py-3 px-6 flex gap-2 items-center border border-secondary-color text-secondary-color rounded-full"
+          >
+            Zobacz nasze realizacje
+            <img src="./assets/images/hero/arrow-down.svg" />
+          </button>
+        </div>
+      </div>
+      <div class="w-1/2 flex justify-end">
+        <div class="relative">
+          <img src="../src/assets/images/hero/slider-1.png" />
+          <div
+            class="absolute flex py-6 px-8 gap-8 bg-grey-color bottom-0 right-0"
+          >
+            <div class="w-12 h-12 flex justify-center items-center">
+              <img src="./assets/images/hero/arrow-left.svg" />
+            </div>
+            <div class="w-12 h-12 flex justify-center items-center">
+              <img src="./assets/images/hero/arrow-right.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-grey-color pt-[120px] pb-40">
+      <div class="flex flex-col gap-4 w-[1040px] my-0 mx-auto">
+        <span class="text-secondary-color">Oferta</span>
+        <div class="flex flex-col gap-8">
+          <h2 class="text-5xl">Działamy <em>kompleksowo</em></h2>
+          <p>
+            Oferujemy kompletną obsługę inwestycji terenów zielonych.
+            Projektujemy nowoczesne ogrody przydomowe oraz rezydencjonalne.
+            Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w życie,
+            a na każdym etapie posłużymy radą i wieloletnim doświadczeniem.
+          </p>
+        </div>
+      </div>
+      <div class="flex px-22 gap-16">
+        <div class="flex flex-col py-12 px-10 bg-white rounded-[28px]">
+          <img src="./assets/images/offer/pencil.png" class="w-10" />
+          <h3>Projekty</h3>
+          <p>
+            Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym
+            wykorzystaniem istniejącej przestrzeni.
+          </p>
+          <button>Dowiedz się więcej</button>
+        </div>
+        <div>
+          <img src="./assets/images/offer/eye.png" />
+          <h3>Wizualizacje</h3>
+          <p>
+            Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego spaceru
+            animowanego w technologii 3D.
+          </p>
+          <button>Dowiedz się więcej</button>
+        </div>
+        <div>
+          <img src="./assets/images/offer/stars.png" />
+          <h3>Realizacje</h3>
+          <p>
+            Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i
+            zaawansowanych technologii.i.
+          </p>
+          <button>Zobacz nasze realizacje</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
