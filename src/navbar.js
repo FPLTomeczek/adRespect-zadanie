@@ -12,3 +12,8 @@ function toggleSearch() {
     input.classList.remove("w-[200px]");
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchImage = document.querySelector("#search-icon");
+  searchImage.addEventListener("click", () => toggleSearch());
+});

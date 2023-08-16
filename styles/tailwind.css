@@ -11,6 +11,14 @@
 @font-face {
   font-family: "Montserrat";
   src: url(../src/assets/fonts//Montserrat-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(../src/assets/fonts//Montserrat-Regular.ttf) format("truetype");
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -25,5 +33,30 @@
   h5,
   h6 {
     font-family: "Montserrat";
+    font-weight: 500;
+  }
+  h2 {
+    letter-spacing: -1.44px;
+    line-height: 115%;
+    font-size: 3rem;
+  }
+  em {
+    font-family: "Inter";
+  }
+  button {
+    display: flex;
+    padding: 12px 24px 14px 24px;
+    align-items: center;
+    gap: 8px;
+  }
+  .grid-item,
+  .grid-sizer {
+    width: 30%;
+  }
+  .grid-item {
+    margin-bottom: 5%;
+  }
+  .gutter-sizer {
+    width: 5%;
   }
 }
