@@ -3,30 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>giarddesign</title>
     <link href="../styles/output.css" rel="stylesheet" />
     <script src="../dist/index.js"></script>
   </head>
   <body>
+    <dialog
+      class="h-screen w-screen fixed z-20 bg-white/80"
+      id="image-gallery-modal"
+    >
+      <div class="w-full h-full flex items-center justify-center">
+        <div class="flex items-center">
+          <button
+            id="image-gallery-prev-btn"
+            class="text-4xl hover:scale-110 duration-300"
+          >
+            &#8592;
+          </button>
+          <div class="relative w-[450px]">
+            <img
+              src="./assets/images/projects/Photo-1.png"
+              alt="modal photo"
+              id="dialog-image"
+              class="w-full object-cover animate-fadeIn"
+            />
+            <form method="dialog">
+              <button
+                type="submit"
+                class="absolute right-0 -top-12 w-fit p-0 text-4xl hover:scale-110 duration-300"
+              >
+                &times;
+              </button>
+            </form>
+          </div>
+          <button
+            id="image-gallery-next-btn"
+            class="text-4xl hover:scale-110 duration-300"
+          >
+            &#8594;
+          </button>
+        </div>
+      </div>
+    </dialog>
+
     <header>
       <nav class="flex justify-between py-6 mx-12">
-        <img src="./assets/images/navbar/logo-dark.svg" alt="logo" class="cursor-pointer" />
+        <img
+          src="./assets/images/navbar/logo-dark.svg"
+          alt="logo"
+          id="logo-dark"
+          class="cursor-pointer inline-block bg-gradient-to-r from-primary-color to-primary-color bg-[length:0%_2px] transition-all duration-300 bg-no-repeat bg-bottom hover:bg-[length:100%_2px] w-fit"
+        />
         <ul class="flex gap-12 h-6 box-border">
           <li>
             <div
               class="group/oferta relative after:content-[''] after:inline-block after:w-3 after:h-3 after:bg-chevron-down"
             >
               Oferta
-              <ul class="hidden absolute bg-white p-4 group-hover/oferta:flex flex-col gap-2 z-10 border border-black-color">
-                <li class="hover:border-b-2 hover:border-primary-color><a href="#">Projekty</a></li>
-                <li><a href="#">Wizualizacje</a></li>
-                <li><a href="#">Realizacje</a></li>
-              </div>
+              <ul
+                class="hidden absolute bg-white p-4 group-hover/oferta:flex flex-col gap-2 z-10 border border-black-color rounded"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block bg-gradient-to-r from-primary-color to-primary-color bg-[length:0%_2px] transition-all duration-300 bg-no-repeat bg-bottom hover:bg-[length:100%_2px] w-fit"
+                    >Projekty</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block bg-gradient-to-r from-primary-color to-primary-color bg-[length:0%_2px] transition-all duration-300 bg-no-repeat bg-bottom hover:bg-[length:100%_2px] w-fit"
+                    >Wizualizacje</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block bg-gradient-to-r from-primary-color to-primary-color bg-[length:0%_2px] transition-all duration-300 bg-no-repeat bg-bottom hover:bg-[length:100%_2px] w-fit"
+                    >Realizacje</a
+                  >
+                </li>
+              </ul>
             </div>
           </li>
-          <li class="hover:border-b-2 hover:border-primary-color"><a href="#">O firmie</a></li>
-          <li class="hover:border-b-2 hover:border-primary-color"><a href="#">Realizacje</a></li>
-          <li class="hover:border-b-2 hover:border-primary-color"><a href="#">Kontakt</a></li>
+          <li>
+            <a
+              href="#"
+              class="inline-block bg-gradient-to-r from-primary-color to-primary-color bg-[length:0%_2px] transition-all duration-300 bg-no-repeat bg-bottom hover:bg-[length:100%_2px] w-fit"
+              >O firmie</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="inline-block bg-gradient-to-r from-primary-color to-primary-color bg-[length:0%_2px] transition-all duration-300 bg-no-repeat bg-bottom hover:bg-[length:100%_2px] w-fit"
+              >Realizacje</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="inline-block bg-gradient-to-r from-primary-color to-primary-color bg-[length:0%_2px] transition-all duration-300 bg-no-repeat bg-bottom hover:bg-[length:100%_2px] w-fit"
+              >Kontakt</a
+            >
+          </li>
           <li class="cursor-pointer">
             <div class="flex items-center overflow-hidden">
               <img
@@ -63,11 +144,13 @@
               </p>
             </div>
             <div class="mt-[5.5rem] flex justify-start gap-9">
-              <button class="bg-secondary-color rounded-full text-grey-color">
+              <button
+                class="bg-secondary-color rounded-full text-grey-color hover:translate-t"
+              >
                 Skontaktuj się z nami
               </button>
               <button
-                class="border border-secondary-color text-secondary-color rounded-full"
+                class="border border-secondary-color text-secondary-color rounded-full hover:translate-t"
               >
                 Zobacz nasze realizacje
                 <img src="./assets/images/hero/arrow-down.svg" />
@@ -75,28 +158,44 @@
             </div>
           </div>
         </div>
-        <!-- <div class="h-[720px] w-[688px]">
-        <img
-          src="./assets/images/about/house.jpg"
-          alt="house"
-          class="object-cover h-[720px] w-[688px]"
-        />
-      </div> -->
+
         <div class="w-1/2 flex h-[737px]">
-          <div class="relative w-full">
-            <img
-              src="../src/assets/images/hero/slider-1.png"
-              class="object-cover w-full h-[737px]"
-            />
+          <div class="relative w-full overflow-hidden">
+            <ul
+              class="slider w-full flex absolute transition-transform duration-500 ease-out"
+            >
+              <li class="flex-[0_0_100%] overflow-hidden">
+                <img
+                  src="../src/assets/images/hero/slider-1.png"
+                  class="object-cover w-full h-[737px]"
+                />
+              </li>
+              <li class="flex-[0_0_100%] overflow-hidden">
+                <img
+                  src="../src/assets/images/about/house.jpg"
+                  class="object-cover w-full h-[737px]"
+                />
+              </li>
+              <li class="flex-[0_0_100%] overflow-hidden">
+                <img
+                  src="../src/assets/images/projects/Photo-1.png"
+                  class="object-cover w-full h-[737px]"
+                />
+              </li>
+            </ul>
             <div
               class="absolute flex py-6 px-8 gap-8 bg-grey-color bottom-0 right-0"
             >
-              <div class="w-12 h-12 flex justify-center items-center">
+              <button
+                class="w-12 h-12 flex justify-center items-center prev p-0 prev-btn hover:scale-110 duration-300"
+              >
                 <img src="./assets/images/hero/arrow-left.svg" />
-              </div>
-              <div class="w-12 h-12 flex justify-center items-center">
+              </button>
+              <button
+                class="w-12 h-12 flex justify-center items-center next p-0 next-btn hover:scale-110 duration-300"
+              >
                 <img src="./assets/images/hero/arrow-right.svg" />
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -118,7 +217,7 @@
         </div>
         <div class="flex px-22 gap-16 justify-center">
           <div
-            class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px]"
+            class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px] cursor-pointer hover:bg-primary-color group transition-all duration-500 ease-out"
           >
             <div>
               <div class="w-10 h-10">
@@ -134,11 +233,14 @@
               class="flex gap-2.5 text-secondary-color items-center border-b border-secondary-color w-fit pb-1"
             >
               <button class="p-0">Dowiedz się więcej</button>
-              <img src="./assets/images/offer/arrow-right.svg" />
+              <img
+                src="./assets/images/offer/arrow-right.svg"
+                class="group-hover:translate-r transition-transform duration-500 ease-out"
+              />
             </div>
           </div>
           <div
-            class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px]"
+            class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px] cursor-pointer hover:bg-primary-color group transition-all duration-500 ease-out"
           >
             <div>
               <div class="w-10 h-10">
@@ -154,11 +256,14 @@
               class="flex gap-2.5 text-secondary-color items-center border-b border-secondary-color w-fit pb-1"
             >
               <button class="p-0">Dowiedz się więcej</button>
-              <img src="./assets/images/offer/arrow-right.svg" />
+              <img
+                src="./assets/images/offer/arrow-right.svg"
+                class="group-hover:translate-r transition-transform duration-500 ease-out"
+              />
             </div>
           </div>
           <div
-            class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px]"
+            class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px] cursor-pointer hover:bg-primary-color group transition-all duration-500 ease-out"
           >
             <div>
               <div class="w-10 h-10">
@@ -174,7 +279,10 @@
               class="flex gap-2.5 text-secondary-color items-center border-b border-secondary-color w-fit pb-1"
             >
               <button class="p-0">Zobacz nasze realizacje</button>
-              <img src="./assets/images/offer/arrow-right.svg" />
+              <img
+                src="./assets/images/offer/arrow-right.svg"
+                class="group-hover:translate-r transition-transform duration-500 ease-out"
+              />
             </div>
           </div>
         </div>
@@ -208,7 +316,9 @@
                 </p>
               </div>
             </div>
-            <button class="border border border-grey-color rounded-full w-fit">
+            <button
+              class="border border border-grey-color rounded-full w-fit hover:translate-r"
+            >
               Poznaj nas bliżej
               <img src="./assets/images/about/arrow-right.svg" />
             </button>
@@ -224,65 +334,77 @@
         <div class="masonry-grid absolute">
           <div class="grid-sizer"></div>
           <div class="gutter-sizer"></div>
-          <div class="grid-item">
+          <div class="grid-item cursor-pointer">
             <img
               src="./assets/images/projects/Photo-1.png"
               alt="project example"
+              class="w-full"
             />
           </div>
-          <div class="grid-item">
+          <div class="grid-item cursor-pointer">
             <img
               src="./assets/images/projects/Photo-2.png"
               alt="project example"
+              class="w-full"
             />
           </div>
-          <div class="grid-item">
+          <div class="grid-item cursor-pointer">
             <img
               src="./assets/images/projects/Photo-3.png"
               alt="project example"
+              class="w-full"
             />
           </div>
-          <div class="grid-item">
+          <div class="grid-item cursor-pointer">
             <img
               src="./assets/images/projects/Photo-4.png"
               alt="project example"
+              class="w-full"
             />
           </div>
-          <div class="grid-item">
+          <div class="grid-item cursor-pointer">
             <img
               src="./assets/images/projects/Photo-5.png"
               alt="project example"
+              class="w-full"
             />
           </div>
-          <div class="grid-item">
+          <div class="grid-item cursor-pointer">
             <img
               src="./assets/images/projects/Photo-6.png"
               alt="project example"
+              class="w-full"
             />
           </div>
-          <div class="grid-item">
+          <div class="grid-item cursor-pointer">
             <img
               src="./assets/images/projects/Photo-7.png"
               alt="project example"
+              class="w-full"
             />
           </div>
-          <div class="grid-item">
+          <div class="grid-item cursor-pointer">
             <img
               src="./assets/images/projects/Photo-8.png"
               alt="project example"
+              class="w-full"
             />
           </div>
-          <div class="grid-item">
+          <div class="grid-item cursor-pointer">
             <img
               src="./assets/images/projects/Photo-9.png"
               alt="project example"
+              class="w-full"
             />
           </div>
           <div
-            class="relative top-[475px] h-[calc(100%-475px-45px)] w-full bg-gradient-to-t from-primary-color to-end-gradient"
+            id="bg-fading-gradient"
+            class="relative top-[475px] h-[calc(100%-475px-45px)] w-full bg-gradient-to-t from-primary-color to-end-gradient pointer-events-none"
           >
             <div class="w-full absolute bottom-[45px] flex justify-center">
-              <button class="border border-black-color rounded-full">
+              <button
+                class="border border-black-color rounded-full hover:translate-t projects-expand-btn pointer-events-auto"
+              >
                 <p>Rozwiń</p>
                 <img
                   src="./assets/images/projects/arrow-down.svg"
@@ -310,7 +432,7 @@
               Śledź nasze najnowsze realizacje!
             </p>
             <button
-              class="pt-2.5 pb-3 bg-grey-color rounded-full text-secondary-color"
+              class="pt-2.5 pb-3 bg-grey-color rounded-full text-secondary-color hover:translate-t"
             >
               Instagram
             </button>
@@ -327,7 +449,9 @@
               <img src="./assets/images/footer/logo-light.svg" alt="logo" />
               <div class="flex gap-2.5 items-center">
                 <p>Daj znać, co możemy dla Ciebie zrobić!</p>
-                <button class="bg-secondary-color rounded-full">
+                <button
+                  class="bg-secondary-color rounded-full hover:translate-t"
+                >
                   Skontaktuj się z nami
                 </button>
               </div>
@@ -335,14 +459,34 @@
             <div class="bg-grey-color h-px my-[62px]"></div>
             <div class="flex justify-between">
               <ul class="flex gap-12">
-                <li>Kontakt</li>
-                <li>Instagram</li>
-                <li>Facebook</li>
-                <li>LinkedIn</li>
+                <li class="hover:text-secondary-color transition duration-300">
+                  <a href="#">Kontakt</a>
+                </li>
+                <li class="hover:text-secondary-color transition duration-300">
+                  <a href="https://www.instagram.com" target="_blank"
+                    >Instagram</a
+                  >
+                </li>
+                <li class="hover:text-secondary-color transition duration-300">
+                  <a href="https://www.facebook.com" target="_blank"
+                    >Facebook</a
+                  >
+                </li>
+                <li class="hover:text-secondary-color transition duration-300">
+                  <a href="https://www.linkedin.com" target="_blank"
+                    >LinkedIn</a
+                  >
+                </li>
               </ul>
               <div class="flex gap-12">
-                <span>000-000-000</span>
-                <span>giarddesign@kontakt.pl</span>
+                <span class="hover:text-secondary-color transition duration-300"
+                  ><a href="tel:+48000-000-000">000-000-000</a></span
+                >
+                <span class="hover:text-secondary-color transition duration-300"
+                  ><a href="mailto:giarddesign@kontakt.pl"
+                    >giarddesign@kontakt.pl</a
+                  ></span
+                >
               </div>
             </div>
           </div>

@@ -15,5 +15,30 @@ function toggleSearch() {
 
 document.addEventListener("DOMContentLoaded", function () {
   const searchImage = document.querySelector("#search-icon");
+  // const slider = document.querySelector(".slider");
+  // const prevBtn = document.querySelector(".prev");
+  // const nextBtn = document.querySelector(".next");
+  // let currentPosition = 0;
+  // const step = 600;
+
+  // function moveSlider(direction) {
+  //   if (direction === "prev") {
+  //     currentPosition += step;
+  //   } else {
+  //     currentPosition -= step;
+  //   }
+  //   slider.style.left = currentPosition + "px";
+  // }
+
   searchImage.addEventListener("click", () => toggleSearch());
+
+  // prevBtn.addEventListener("click", () => {
+  //   console.log("prev");
+  //   moveSlider("prev");
+  // });
+  // nextBtn.addEventListener("click", () => {
+  //   console.log("next");
+
+  //   moveSlider("next");
+  // });
 });

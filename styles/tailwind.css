@@ -48,7 +48,9 @@
     padding: 12px 24px 14px 24px;
     align-items: center;
     gap: 8px;
+    transition: transform 0.3s;
   }
+
   .grid-item,
   .grid-sizer {
     width: 30%;
@@ -58,5 +60,14 @@
   }
   .gutter-sizer {
     width: 5%;
+  }
+}
+
+@layer components {
+  .translate-r {
+    transform: translateX(10px);
+  }
+  .translate-t {
+    transform: translateY(-10px);
   }
 }
