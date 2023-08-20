@@ -18,9 +18,9 @@
             id="image-gallery-prev-btn"
             class="text-4xl hover:scale-110 duration-300"
           >
-            &#8592;
+            <span class="text-4xl hover:scale-110 duration-300">&#8592;</span>
           </button>
-          <div class="relative w-[450px]">
+          <div class="relative max-w-[450px]">
             <img
               src="./assets/images/projects/Photo-1.png"
               alt="modal photo"
@@ -36,25 +36,62 @@
               </button>
             </form>
           </div>
-          <button
-            id="image-gallery-next-btn"
-            class="text-4xl hover:scale-110 duration-300"
-          >
-            &#8594;
+          <button autofocus id="image-gallery-next-btn">
+            <span class="text-4xl hover:scale-110 duration-300">&#8594;</span>
           </button>
         </div>
       </div>
     </dialog>
 
+    <dialog
+      class="w-screen h-screen fixed z-20 translate-x-full transition-transform durationn-300"
+      id="navbar-navigation-modal"
+    >
+      <button
+        class="absolute right-4 top-4 p-0 text-4xl hover:scale-110 duration-300"
+        id="close-navbar-dialog-btn"
+      >
+        &times;
+      </button>
+      <div class="w-full h-full flex justify-center items-center">
+        <ul class="flex flex-col gap-12 text-center">
+          <li class="hover:text-primary-color transition-colors">
+            <a autofocus href="#">O firmie</a>
+          </li>
+          <li class="hover:text-primary-color transition-colors">
+            <a href="#">Projekty</a>
+          </li>
+          <li class="hover:text-primary-color transition-colors">
+            <a href="#">Wizualizacje</a>
+          </li>
+          <li class="hover:text-primary-color transition-colors">
+            <a href="#">Realizacje</a>
+          </li>
+          <li class="hover:text-primary-color transition-colors">
+            <a href="#">Kontakt</a>
+          </li>
+        </ul>
+      </div>
+    </dialog>
+
     <header>
-      <nav class="flex justify-between py-6 mx-12">
+      <nav
+        class="flex justify-between py-6 px-8 my-0 mx-auto max-w-[1262px] xl:px-0"
+      >
         <img
           src="./assets/images/navbar/logo-dark.svg"
           alt="logo"
           id="logo-dark"
           class="cursor-pointer inline-block bg-gradient-to-r from-primary-color to-primary-color bg-[length:0%_2px] transition-all duration-300 bg-no-repeat bg-bottom hover:bg-[length:100%_2px] w-fit"
         />
-        <ul class="flex gap-12 h-6 box-border">
+        <div class="w-6 h-6 md:hidden">
+          <img
+            src="./assets/images/navbar/options_3482452.png"
+            alt="navigation"
+            id="navbar-mobile-nav-icon"
+          />
+        </div>
+        <ul class="gap-12 h-6 box-border hidden md:flex">
           <li>
             <div
               class="group/oferta relative after:content-[''] after:inline-block after:w-3 after:h-3 after:bg-chevron-down"
@@ -129,28 +166,32 @@
     </header>
 
     <main>
-      <section class="bg-primary-color flex justify-end items-center gap-16">
-        <div class="w-1/2 flex justify-end">
-          <div class="max-w-[596px]">
-            <div>
-              <h1 class="text-6xl">
+      <section
+        class="bg-primary-color flex justify-center items-center gap-16 py-12 px-8 lg:justify-end lg:p-0"
+      >
+        <div class="w-full flex justify-center lg:w-1/2 lg:justify-end">
+          <div
+            class="flex flex-col gap-8 w-full sm:max-w-[596px] lg:gap-[4.5rem] lg:pl-8 xl:p-0"
+          >
+            <div class="flex flex-col gap-8 sm:gap-[44px]">
+              <h1 class="text-4xl sm:text-6xl">
                 Nowoczesna aranżacja<br />
                 Twojego ogrodu
               </h1>
-              <p class="mt-11">
+              <p>
                 Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
                 realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
                 podejściem do każdego projektu.
               </p>
             </div>
-            <div class="mt-[5.5rem] flex justify-start gap-9">
+            <div class="flex flex-col justify-start gap-4 sm:gap-9 sm:flex-row">
               <button
-                class="bg-secondary-color rounded-full text-grey-color hover:translate-t"
+                class="bg-secondary-color w-fit rounded-full text-grey-color hover:translate-t"
               >
                 Skontaktuj się z nami
               </button>
               <button
-                class="border border-secondary-color text-secondary-color rounded-full hover:translate-t"
+                class="border w-fit border-secondary-color text-secondary-color rounded-full hover:translate-t"
               >
                 Zobacz nasze realizacje
                 <img src="./assets/images/hero/arrow-down.svg" />
@@ -159,7 +200,7 @@
           </div>
         </div>
 
-        <div class="w-1/2 flex h-[737px]">
+        <div class="w-1/2 h-[737px] hidden lg:flex">
           <div class="relative w-full overflow-hidden">
             <ul
               class="slider w-full flex absolute transition-transform duration-500 ease-out"
@@ -201,95 +242,101 @@
         </div>
       </section>
 
-      <section class="bg-grey-color pt-[120px] pb-40">
-        <div class="flex flex-col gap-4 w-[1040px] mt-0 mb-24 mx-auto">
-          <span class="text-secondary-color">Oferta</span>
-          <div class="flex flex-col gap-8">
-            <h2>Działamy <em>kompleksowo</em></h2>
-            <p>
-              Oferujemy kompletną obsługę inwestycji terenów zielonych.
-              Projektujemy nowoczesne ogrody przydomowe oraz rezydencjonalne.
-              Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w
-              życie, a na każdym etapie posłużymy radą i wieloletnim
-              doświadczeniem.
-            </p>
-          </div>
-        </div>
-        <div class="flex px-22 gap-16 justify-center">
-          <div
-            class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px] cursor-pointer hover:bg-primary-color group transition-all duration-500 ease-out"
-          >
-            <div>
-              <div class="w-10 h-10">
-                <img src="./assets/images/offer/pencil.png" />
-              </div>
-              <h3 class="mt-8 text-[28px]">Projekty</h3>
-              <p class="mt-3 text-sm">
-                Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym
-                wykorzystaniem istniejącej przestrzeni.
+      <section
+        class="bg-grey-color pt-12 pb-12 px-8 lg:pt-[120px] lg:pb-40 xl:px-0"
+      >
+        <div class="flex flex-col gap-12 lg:gap-24">
+          <div class="flex flex-col gap-4 max-w-[1040px] xl:px-0 mx-auto">
+            <span class="text-secondary-color">Oferta</span>
+            <div class="flex flex-col gap-8">
+              <h2>Działamy <em>kompleksowo</em></h2>
+              <p>
+                Oferujemy kompletną obsługę inwestycji terenów zielonych.
+                Projektujemy nowoczesne ogrody przydomowe oraz rezydencjonalne.
+                Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w
+                życie, a na każdym etapie posłużymy radą i wieloletnim
+                doświadczeniem.
               </p>
-            </div>
-            <div
-              class="flex gap-2.5 text-secondary-color items-center border-b border-secondary-color w-fit pb-1"
-            >
-              <button class="p-0">Dowiedz się więcej</button>
-              <img
-                src="./assets/images/offer/arrow-right.svg"
-                class="group-hover:translate-r transition-transform duration-500 ease-out"
-              />
             </div>
           </div>
           <div
-            class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px] cursor-pointer hover:bg-primary-color group transition-all duration-500 ease-out"
+            class="flex flex-col gap-16 justify-center items-center xl:px-[5.5rem] xl:flex-row"
           >
-            <div>
-              <div class="w-10 h-10">
-                <img src="./assets/images/offer/eye.png" />
+            <div
+              class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px] cursor-pointer hover:bg-primary-color group transition-all duration-500 ease-out"
+            >
+              <div>
+                <div class="w-10 h-10">
+                  <img src="./assets/images/offer/pencil.png" />
+                </div>
+                <h3 class="mt-8 text-[28px]">Projekty</h3>
+                <p class="mt-3 text-sm">
+                  Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym
+                  wykorzystaniem istniejącej przestrzeni.
+                </p>
               </div>
-              <h3 class="mt-8 text-[28px]">Wizualizacje</h3>
-              <p class="mt-3 text-sm">
-                Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego
-                spaceru animowanego w technologii 3D.
-              </p>
+              <div
+                class="flex gap-2.5 text-secondary-color items-center border-b border-secondary-color w-fit pb-1"
+              >
+                <button class="p-0">Dowiedz się więcej</button>
+                <img
+                  src="./assets/images/offer/arrow-right.svg"
+                  class="group-hover:translate-r transition-transform duration-500 ease-out"
+                />
+              </div>
             </div>
             <div
-              class="flex gap-2.5 text-secondary-color items-center border-b border-secondary-color w-fit pb-1"
+              class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px] cursor-pointer hover:bg-primary-color group transition-all duration-500 ease-out"
             >
-              <button class="p-0">Dowiedz się więcej</button>
-              <img
-                src="./assets/images/offer/arrow-right.svg"
-                class="group-hover:translate-r transition-transform duration-500 ease-out"
-              />
-            </div>
-          </div>
-          <div
-            class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px] cursor-pointer hover:bg-primary-color group transition-all duration-500 ease-out"
-          >
-            <div>
-              <div class="w-10 h-10">
-                <img src="./assets/images/offer/stars.png" />
+              <div>
+                <div class="w-10 h-10">
+                  <img src="./assets/images/offer/eye.png" />
+                </div>
+                <h3 class="mt-8 text-[28px]">Wizualizacje</h3>
+                <p class="mt-3 text-sm">
+                  Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego
+                  spaceru animowanego w technologii 3D.
+                </p>
               </div>
-              <h3 class="mt-8 text-[28px]">Realizacje</h3>
-              <p class="mt-3 text-sm">
-                Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i
-                zaawansowanych technologii.
-              </p>
+              <div
+                class="flex gap-2.5 text-secondary-color items-center border-b border-secondary-color w-fit pb-1"
+              >
+                <button class="p-0">Dowiedz się więcej</button>
+                <img
+                  src="./assets/images/offer/arrow-right.svg"
+                  class="group-hover:translate-r transition-transform duration-500 ease-out"
+                />
+              </div>
             </div>
             <div
-              class="flex gap-2.5 text-secondary-color items-center border-b border-secondary-color w-fit pb-1"
+              class="flex flex-col justify-between py-12 px-10 bg-white rounded-[28px] max-w-[378px] h-[370px] cursor-pointer hover:bg-primary-color group transition-all duration-500 ease-out"
             >
-              <button class="p-0">Zobacz nasze realizacje</button>
-              <img
-                src="./assets/images/offer/arrow-right.svg"
-                class="group-hover:translate-r transition-transform duration-500 ease-out"
-              />
+              <div>
+                <div class="w-10 h-10">
+                  <img src="./assets/images/offer/stars.png" />
+                </div>
+                <h3 class="mt-8 text-[28px]">Realizacje</h3>
+                <p class="mt-3 text-sm">
+                  Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań
+                  i zaawansowanych technologii.
+                </p>
+              </div>
+              <div
+                class="flex gap-2.5 text-secondary-color items-center border-b border-secondary-color w-fit pb-1"
+              >
+                <button class="p-0">Zobacz nasze realizacje</button>
+                <img
+                  src="./assets/images/offer/arrow-right.svg"
+                  class="group-hover:translate-r transition-transform duration-500 ease-out"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section class="bg-secondary-color flex gap-16 items-center">
-        <div class="w-1/2">
+        <div class="w-1/2 hidden lg:block">
           <div class="h-[720px] w-full">
             <img
               src="./assets/images/about/house.jpg"
@@ -298,9 +345,11 @@
             />
           </div>
         </div>
-        <div class="w-1/2">
+        <div
+          class="w-full px-8 py-12 lg:w-1/2 lg:p-0 flex justify-center lg:block"
+        >
           <div
-            class="pl-24 flex flex-col gap-[72px] text-grey-color max-w-[596px]"
+            class="pl-0 flex flex-col gap-8 text-grey-color max-w-[596px] lg:pr-8 lg:pl-24 lg:gap-[72px] xl:pr-0"
           >
             <div class="flex flex-col gap-4">
               <span class="text-xs">O firmie</span>
@@ -327,7 +376,9 @@
       </section>
 
       <section class="bg-primary-color">
-        <div class="flex flex-col pt-[120px] pb-24 gap-4 pl-40">
+        <div
+          class="flex flex-col gap-4 py-12 px-8 lg:pt-[120px] lg:px-0 lg:pb-24 lg:pl-40"
+        >
           <span class="text-secondary-color">Realizacje</span>
           <h2>Nasze projekty</h2>
         </div>
@@ -399,7 +450,7 @@
           </div>
           <div
             id="bg-fading-gradient"
-            class="relative top-[475px] h-[calc(100%-475px-45px)] w-full bg-gradient-to-t from-primary-color to-end-gradient pointer-events-none"
+            class="relative xl:top-[475px] top-[20%] h-[80%] xl:h-[calc(100%-475px-45px)] w-full bg-gradient-to-t from-primary-color to-end-gradient pointer-events-none"
           >
             <div class="w-full absolute bottom-[45px] flex justify-center">
               <button
@@ -418,17 +469,21 @@
 
       <section class="py-[60px] flex justify-center items-center bg-grey-color">
         <div
-          class="py-[120px] px-[110px] flex gap-16 items-end bg-secondary-color text-grey-color"
+          class="flex flex-col gap-8 items-center p-8 bg-secondary-color text-grey-color md:flex-row md:py-[120px] md:px-[110px] md:items-end md:gap-16"
         >
           <div class="text-[40px] leading-[48px]">
-            <h3 class="font-normal">
+            <h3 class="font-normal text-center text-[36px] md:text-start">
               Zostańmy w kontakcie!<br />
               Znajdziesz nas na
               <em class="font-medium">Instagramie.</em>
             </h3>
           </div>
-          <div class="flex flex-col gap-6 w-[157px] items-start">
-            <p class="tracking-[-0.16px] leading-normal">
+          <div
+            class="flex flex-col gap-6 w-[157px] items-center md:items-start"
+          >
+            <p
+              class="tracking-[-0.16px] leading-normal text-center md:text-left"
+            >
               Śledź nasze najnowsze realizacje!
             </p>
             <button
@@ -441,14 +496,22 @@
       </section>
     </main>
 
-    <footer class="flex justify-center bg-black-color py-20 px-[200px]">
-      <div class="w-[1040px] text-grey-color">
-        <div class="w-full flex flex-col gap-[120px]">
+    <footer
+      class="flex justify-center bg-black-color py-12 sm:px-8 xl:py-20 xl:px-[200px]"
+    >
+      <div class="text-grey-color xl:w-[1040px]">
+        <div class="w-full flex flex-col gap-24 xl:gap-[120px]">
           <div>
-            <div class="flex justify-between items-center">
+            <div
+              class="flex flex-col gap-4 justify-between items-center md:flex-row"
+            >
               <img src="./assets/images/footer/logo-light.svg" alt="logo" />
-              <div class="flex gap-2.5 items-center">
-                <p>Daj znać, co możemy dla Ciebie zrobić!</p>
+              <div
+                class="flex flex-col gap-8 items-center sm:gap-2.5 sm:flex-row"
+              >
+                <p class="text-center sm:text-start">
+                  Daj znać, co możemy dla Ciebie zrobić!
+                </p>
                 <button
                   class="bg-secondary-color rounded-full hover:translate-t"
                 >
@@ -456,9 +519,9 @@
                 </button>
               </div>
             </div>
-            <div class="bg-grey-color h-px my-[62px]"></div>
-            <div class="flex justify-between">
-              <ul class="flex gap-12">
+            <div class="bg-grey-color h-px my-8 sm:my-[62px]"></div>
+            <div class="block justify-between xl:flex">
+              <ul class="flex flex-col gap-4 sm:flex-row sm:gap-12">
                 <li class="hover:text-secondary-color transition duration-300">
                   <a href="#">Kontakt</a>
                 </li>
@@ -478,7 +541,9 @@
                   >
                 </li>
               </ul>
-              <div class="flex gap-12">
+              <div
+                class="flex flex-col gap-4 mt-8 sm:flex-row sm:gap-12 xl:m-0"
+              >
                 <span class="hover:text-secondary-color transition duration-300"
                   ><a href="tel:+48000-000-000">000-000-000</a></span
                 >
@@ -490,7 +555,7 @@
               </div>
             </div>
           </div>
-          <div class="flex justify-between">
+          <div class="flex flex-col justify-between sm:flex-row">
             <p>Prawa zastrzeżone © 2022</p>
             <div class="flex items-center gap-4">
               <p>made by</p>

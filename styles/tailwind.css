@@ -36,9 +36,14 @@
     font-weight: 500;
   }
   h2 {
+    font-size: 36px;
     letter-spacing: -1.44px;
     line-height: 115%;
-    font-size: 3rem;
+  }
+  @media screen and (min-width: 640px) {
+    h2 {
+      font-size: 3rem;
+    }
   }
   em {
     font-family: "Inter";
