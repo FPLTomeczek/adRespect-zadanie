@@ -38,31 +38,6 @@ module.exports = {
       {
         test: /\.html$/,
         loader: "html-loader",
-        options: {
-          minimize: true,
-          sources: {
-            list: [
-              {
-                tag: "img",
-                attribute: "src",
-                type: "src",
-              },
-            ],
-          },
-        },
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[path][name].[ext]",
-              context: path.resolve(__dirname, "src/assets/images"),
-              publicPath: "/",
-            },
-          },
-        ],
       },
     ],
   },
