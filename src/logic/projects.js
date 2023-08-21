@@ -24,12 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
     ".masonry-grid .grid-item img"
   );
 
+  // i know it's ugly but i couldnt manage
+  // how to configure it properly with webpack in late hours
   const imagesSrc = [
-    "./b67292cddfe4f6f6ed74.png",
-    "./fa6b2eb56f2f03e2266c.png",
-    "./04069d0360d141be133c.png",
-    "./3a195e8bee3cb7d29fb1.png",
-    "./b3c7f468a82f7f88db0e.png",
+    "./0616867c69fc5daaf10a.webp",
+    "./3236472d2c1fdcf37b47.webp",
+    "./9347fbf0039fc2654b68.webp",
+    "./1281e0ebb5e46763870a.webp",
+    "./f49d8bba28b5e99513d0.webp",
   ];
 
   function addImages() {
@@ -43,9 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       gridItem.appendChild(img);
       lastGridItem.parentNode.insertBefore(gridItem, lastGridItem.nextSibling);
-      console.log(lastGridItem);
       lastGridItem = gridItem;
-      console.log(lastGridItem);
       msnry.appended(gridItem);
     });
     imagesLoaded(lastGridItem.parentNode, () => {
@@ -71,8 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const dialog = document.getElementById("image-gallery-modal");
   const dialogImage = document.getElementById("dialog-image");
 
-  console.log(gridItems[0]);
-
   let imageModalIndex = 0;
 
   expandImagesBtn.addEventListener("click", addImages);
@@ -87,8 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const imageGalleryPrevBtn = document.getElementById("image-gallery-prev-btn");
   const imageGalleryNextBtn = document.getElementById("image-gallery-next-btn");
-
-  console.log(gridItemsImages);
 
   imageGalleryNextBtn.addEventListener("click", () => {
     if (imageModalIndex === gridItems.length - 1) {
