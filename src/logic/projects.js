@@ -1,4 +1,9 @@
 import imagesLoaded from "imagesloaded";
+import imgSrc4 from "../assets/images/projects/Photo-4.png";
+import imgSrc5 from "../assets/images/projects/Photo-5.png";
+import imgSrc6 from "../assets/images/projects/Photo-6.png";
+import imgSrc7 from "../assets/images/projects/Photo-7.png";
+import imgSrc8 from "../assets/images/projects/Photo-8.png";
 
 const Masonry = require("masonry-layout");
 
@@ -24,13 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ".masonry-grid .grid-item img"
   );
 
-  const imagesSrc = [
-    "./assets/images/projects/Photo-4.png",
-    "./assets/images/projects/Photo-5.png",
-    "./assets/images/projects/Photo-6.png",
-    "./assets/images/projects/Photo-7.png",
-    "./assets/images/projects/Photo-8.png",
-  ];
+  const imagesSrc = [imgSrc4, imgSrc5, imgSrc6, imgSrc7, imgSrc8];
 
   function addImages() {
     imagesSrc.forEach((imgSrc) => {
