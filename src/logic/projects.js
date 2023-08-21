@@ -1,5 +1,3 @@
-import imagesLoaded from "imagesloaded";
-
 const Masonry = require("masonry-layout");
 
 let msnry;
@@ -18,115 +16,74 @@ document.addEventListener("DOMContentLoaded", function () {
   const bgFadingGradient = document.querySelector("#bg-fading-gradient");
   const expandImagesBtn = document.querySelector(".projects-expand-btn");
   let gridItems = document.querySelectorAll(".masonry-grid .grid-item");
-  let lastGridItem = gridItems[gridItems.length - 1];
-
-  let gridItemsImages = document.querySelectorAll(
-    ".masonry-grid .grid-item img"
-  );
-
-  // i know it's ugly but i couldnt manage
-  // how to configure it properly with webpack in late hours
-  const imagesSrc = [
-    "./0616867c69fc5daaf10a.webp",
-    "./3236472d2c1fdcf37b47.webp",
-    "./9347fbf0039fc2654b68.webp",
-    "./1281e0ebb5e46763870a.webp",
-    "./f49d8bba28b5e99513d0.webp",
-  ];
+  let imageModalIndex = 0;
 
   function addImages() {
-    imagesSrc.forEach((imgSrc) => {
-      const gridItem = document.createElement("div");
-      gridItem.className = "grid-item cursor-pointer";
-      const img = document.createElement("img");
-      img.src = imgSrc;
-      img.alt = "projects-photo";
-      img.classList.add("w-full");
-
-      gridItem.appendChild(img);
-      lastGridItem.parentNode.insertBefore(gridItem, lastGridItem.nextSibling);
-      lastGridItem = gridItem;
-      msnry.appended(gridItem);
-    });
-    imagesLoaded(lastGridItem.parentNode, () => {
-      msnry.layout();
-    });
-
-    gridItems = document.querySelectorAll(".masonry-grid .grid-item");
-    gridItems.forEach((gridItem, key) =>
-      gridItem.addEventListener("click", () => {
-        dialogImage.setAttribute(
-          "src",
-          gridItemsImages[key].getAttribute("src")
-        );
-        imageModalIndex = key;
-        dialog.show();
-      })
+    const hiddenImages = document.getElementsByClassName(
+      "grid-item cursor-pointer hidden"
     );
-    gridItemsImages = document.querySelectorAll(".masonry-grid .grid-item img");
+    console.log(hiddenImages);
+    [...hiddenImages].forEach((image) => image.classList.remove("hidden"));
+    msnry.layout();
+    updateGridItemsAndListeners();
     expandImagesBtn.remove();
     bgFadingGradient.remove();
   }
 
-  const dialog = document.getElementById("image-gallery-modal");
-  const dialogImage = document.getElementById("dialog-image");
+  function updateGridItemsAndListeners() {
+    gridItems = document.querySelectorAll(".masonry-grid .grid-item");
+    const gridItemsImages = document.querySelectorAll(
+      ".masonry-grid .grid-item img"
+    );
 
-  let imageModalIndex = 0;
+    gridItems.forEach((gridItem, key) =>
+      gridItem.addEventListener("click", () => {
+        updateDialogImageSource(gridItemsImages[key].getAttribute("src"), key);
+      })
+    );
+  }
+
+  function updateDialogImageSource(src, index) {
+    const dialogImage = document.getElementById("dialog-image");
+    const dialog = document.getElementById("image-gallery-modal");
+    dialogImage.setAttribute("src", src);
+    imageModalIndex = index;
+    dialog.show();
+  }
+
+  function changeImage(direction) {
+    const gridItemsImages = document.querySelectorAll(
+      ".masonry-grid .grid-item img"
+    );
+
+    if (direction === "next") {
+      imageModalIndex =
+        imageModalIndex === gridItems.length - 1 ? 0 : imageModalIndex + 1;
+    } else if (direction === "prev") {
+      imageModalIndex =
+        imageModalIndex === 0 ? gridItems.length - 1 : imageModalIndex - 1;
+    }
+
+    const dialogImage = document.getElementById("dialog-image");
+    dialogImage.classList.remove("animate-fadeIn");
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        dialogImage.classList.add("animate-fadeIn");
+        dialogImage.setAttribute(
+          "src",
+          gridItemsImages[imageModalIndex].getAttribute("src")
+        );
+      });
+    });
+  }
 
   expandImagesBtn.addEventListener("click", addImages);
+  updateGridItemsAndListeners();
 
-  gridItems.forEach((gridItem, key) =>
-    gridItem.addEventListener("click", () => {
-      dialogImage.setAttribute("src", gridItemsImages[key].getAttribute("src"));
-      imageModalIndex = key;
-      dialog.show();
-    })
-  );
-
-  const imageGalleryPrevBtn = document.getElementById("image-gallery-prev-btn");
-  const imageGalleryNextBtn = document.getElementById("image-gallery-next-btn");
-
-  imageGalleryNextBtn.addEventListener("click", () => {
-    if (imageModalIndex === gridItems.length - 1) {
-      imageModalIndex = 0;
-    } else {
-      imageModalIndex++;
-    }
-    dialogImage.classList.remove("animate-fadeIn");
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        dialogImage.classList.add("animate-fadeIn");
-        dialogImage.setAttribute(
-          "src",
-          gridItemsImages[imageModalIndex].getAttribute("src")
-        );
-      });
-    });
-    dialogImage.setAttribute(
-      "src",
-      gridItemsImages[imageModalIndex].getAttribute("src")
-    );
-  });
-
-  imageGalleryPrevBtn.addEventListener("click", () => {
-    if (imageModalIndex === 0) {
-      imageModalIndex = gridItems.length - 1;
-    } else {
-      imageModalIndex--;
-    }
-    dialogImage.classList.remove("animate-fadeIn");
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        dialogImage.classList.add("animate-fadeIn");
-        dialogImage.setAttribute(
-          "src",
-          gridItemsImages[imageModalIndex].getAttribute("src")
-        );
-      });
-    });
-    dialogImage.setAttribute(
-      "src",
-      gridItemsImages[imageModalIndex].getAttribute("src")
-    );
-  });
+  document
+    .getElementById("image-gallery-next-btn")
+    .addEventListener("click", () => changeImage("next"));
+  document
+    .getElementById("image-gallery-prev-btn")
+    .addEventListener("click", () => changeImage("prev"));
 });

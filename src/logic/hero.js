@@ -5,28 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const sliderCounter = slider.children.length;
   let slidePosition = 0;
-  slideArrowVisibility();
 
-  function slideArrowVisibility() {
-    if (slidePosition === -sliderCounter + 1) {
-      nextBtn.style.opacity = "0.1";
-      nextBtn.style.cursor = "default";
-      nextBtn.classList.remove("hover:scale-110");
-    } else {
-      nextBtn.style.opacity = "1";
-      nextBtn.style.cursor = "pointer";
-      nextBtn.classList.add("hover:scale-110");
-    }
+  function setArrowVisibility(btn, isDisabled) {
+    btn.style.opacity = isDisabled ? "0.1" : "1";
+    btn.style.cursor = isDisabled ? "default" : "pointer";
 
-    if (slidePosition === 0) {
-      prevBtn.style.opacity = "0.1";
-      prevBtn.style.cursor = "default";
-      prevBtn.classList.remove("hover:scale-110");
+    if (isDisabled) {
+      btn.classList.remove("hover:scale-110");
     } else {
-      prevBtn.style.opacity = "1";
-      prevBtn.style.cursor = "pointer";
-      prevBtn.classList.add("hover:scale-110");
+      btn.classList.add("hover:scale-110");
     }
+  }
+
+  function updateArrowVisibility() {
+    setArrowVisibility(nextBtn, slidePosition === -sliderCounter + 1);
+    setArrowVisibility(prevBtn, slidePosition === 0);
   }
 
   function updateSliderWidth() {
@@ -41,11 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
       slidePosition++;
     }
     updateSliderWidth();
-    slideArrowVisibility();
+    updateArrowVisibility();
   }
 
   prevBtn.addEventListener("click", () => slideTranslation("prev"));
   nextBtn.addEventListener("click", () => slideTranslation("next"));
-
   window.addEventListener("resize", updateSliderWidth);
+
+  updateArrowVisibility();
 });
