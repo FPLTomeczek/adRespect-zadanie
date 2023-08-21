@@ -1217,6 +1217,11 @@ button {
   transform: translateX(10px);
 }
 
+.after\:ml-\[5px\]::after {
+  content: var(--tw-content);
+  margin-left: 5px;
+}
+
 .after\:inline-block::after {
   content: var(--tw-content);
   display: inline-block;
