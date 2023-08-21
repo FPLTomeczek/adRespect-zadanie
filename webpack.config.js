@@ -38,13 +38,19 @@ module.exports = {
       {
         test: /\.html$/,
         loader: "html-loader",
+        options: {
+          minimize: true,
+        },
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
-        include: path.resolve(__dirname, "src/logic/projects.js"),
         use: [
           {
             loader: "file-loader",
+            options: {
+              name: "[path][name].[ext]",
+              context: path.resolve(__dirname, "src/assets/images"),
+            },
           },
         ],
       },
