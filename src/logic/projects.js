@@ -25,11 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   const imagesSrc = [
-    "./assets/images/projects/Photo-4.png",
-    "./assets/images/projects/Photo-5.png",
-    "./assets/images/projects/Photo-6.png",
-    "./assets/images/projects/Photo-7.png",
-    "./assets/images/projects/Photo-8.png",
+    "./b67292cddfe4f6f6ed74.png",
+    "./fa6b2eb56f2f03e2266c.png",
+    "./04069d0360d141be133c.png",
+    "./3a195e8bee3cb7d29fb1.png",
+    "./b3c7f468a82f7f88db0e.png",
   ];
 
   function addImages() {
