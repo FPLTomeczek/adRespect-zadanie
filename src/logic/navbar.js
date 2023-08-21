@@ -1,3 +1,6 @@
+import "../../styles/tailwind.css";
+import "../../styles/output.css";
+
 function toggleSearch() {
   const input = document.getElementById("searchInput");
 
