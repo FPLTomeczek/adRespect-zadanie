@@ -40,6 +40,15 @@ module.exports = {
         loader: "html-loader",
         options: {
           minimize: true,
+          sources: {
+            list: [
+              {
+                tag: "img",
+                attribute: "src",
+                type: "src",
+              },
+            ],
+          },
         },
       },
       {
@@ -50,6 +59,7 @@ module.exports = {
             options: {
               name: "[path][name].[ext]",
               context: path.resolve(__dirname, "src/assets/images"),
+              publicPath: "/",
             },
           },
         ],
